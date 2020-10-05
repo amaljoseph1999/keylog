@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body><form action="/dept_editb" method="post">
+  <b><i><p>Edit department:</p>
+</i></b>  <table width="793" height="140">
+  <tr><td>Department id:</td>
+  <td><input type="hidden" value=" {{ data['dept_id'] }}" name="did"> </td></tr><tr>
+
+    <td width="197">Department Name:</td>
+    <td width="584"><label for="dep_name"></label>
+      <input type="text" name="dep_name" id="dep_name" size="50" value="{{ data['name'] }}" /></td>
+  </tr>
+  <tr align="center">
+    <td colspan="2"><input type="submit" name="update" id="update" value="Update" /></td>
+    </tr>
+</table>
+    {% include "footer.html" %}
+</form>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

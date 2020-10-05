@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body bgcolor="#CCCCCC">
+<strong>Add Empolyee : </strong><br />
+<br />
+<center><form action="/add_emp_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <p>&nbsp;</p>
+  <table width="644" height="644" >
+    <tr>
+      <td width="101" height="43">First Name</td>
+      <td width="467">:
+        <label for="name"></label>
+      <input type="text" name="names" id="names" /></td>
+    </tr>
+    <tr>
+      <td height="47">Last Name</td>
+      <td>:
+        <label for="lastname"></label>
+        <input type="text" name="lastname" id="lastname" />        <label for="address"></label></td>
+    </tr>
+    <tr><td height="51">
+    Post
+    </td>
+    <td>:
+      <label for="posts"></label>
+      <input type="text" name="posts" id="posts" /></td></tr>
+    <tr><td height="45">
+    House
+    </td>
+    <td>:
+      <label for="house"></label>
+      <input type="text" name="house" id="house" /></td></tr>
+    <tr><td height="45">
+    Street
+    </td>
+    <td>:
+      <label for="street"></label>
+      <input type="text" name="street" id="street" /></td></tr>
+    <tr>
+      <td height="46">
+    Place
+    </td>
+    <td>:
+      <label for="place"></label>
+      <input type="text" name="place" id="place" /></td></tr>
+    <tr><td height="46">
+    District
+    </td>
+    <td>:
+      <label for="dis"></label>
+      <input type="text" name="dis" id="dis" /></td></tr>
+    <tr>
+    <td height="42">Pin Code
+    </td>
+    <td>:
+      <label for="pin"></label>
+      <input type="text" name="pin" id="pin" />
+    </td>
+    </tr>
+    <tr>
+      <td height="41">Mob </td>
+      <td>:
+        <label for="mob"></label>
+      <input type="text" name="mob" id="mob" /></td>
+    </tr>
+    <tr>
+      <td>Gender </td>
+      <td><p><label>
+        <input type="radio" name="gender" value="M" id="gender_0" />
+          Male 
+        <br />
+        <label>
+          <input type="radio" name="gender" value="F" id="gender_1" />
+          Female</label>
+           <br />
+        <label>
+          <input type="radio" name="gender" value="other" id="gender_1" />
+          Other</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <td>DOB </td>
+      <td>:
+        <label for="date"></label>
+      <input type="date" name="date1" id="date1" /></td>
+    </tr>
+    <tr>
+      <td>Photo </td>
+      <td>:
+        <label for="image"></label>
+        <label for="image"></label>
+      <input type="file" name="image1" id="image1" /></td>
+    </tr>
+    <tr>
+      <td>Email </td>
+      <td>:
+        <label for="email"></label>
+      <input type="text" name="email1" id="email1" /></td>
+    </tr>
+
+    <tr>
+      <td>Department </td>
+      <td>:
+           <select name="dept">
+      {% for i in data %}
+            <option value="{{ i['dept_id'] }}">{{ i['name'] }}</option>
+      {% endfor %}
+           </select>
+      </td>
+    </tr>
+    <tr align="center">
+    <td colspan="2"><input type="submit" name="add" id="add" value="Add" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+{% include "footer.html" %}
+</form>
+</center>
+
+</body>
+</html>
