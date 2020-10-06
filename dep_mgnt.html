@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body><form action="/add_dept_post" method="post">
+<strong>Add department: </strong><br />
+<br />
+
+<center><table width="481" height="154">
+  <tr>
+    <td>Department Name:</td>
+    <td><label for="department"></label>
+      <input type="text" name="department" id="department" size="50" /></td>
+  </tr>
+  <tr>
+  
+  <tr align="center">
+    <td ><div align="left">Email  :</div></td>
+    <td><label for="email"></label>
+      <div align="left">
+        <input type="text" name="email" id="passwd" />
+      </div>
+    </td></td>
+    
+  </tr>
+  <tr align="center">
+    <td colspan="2"><input type="submit" name="add" id="add" value="Add" /></td>
+    </tr>
+</table>
+</center>
+{% include "footer.html" %}
+</form>
+</body>
+</html>
