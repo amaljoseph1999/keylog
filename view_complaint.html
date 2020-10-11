@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body>
+<b><i>View Complaint</i></b>
+:<br />
+<br />
+<form action="" method="get"><table width="592" border="1">
+  <tr>
+    <td width="89">#</td>
+    <td width="175">User Name</td>
+    <td width="158">Complaint</td>
+    <td width="89">date</td>
+      <td width="47">&nbsp;</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td><p>{{ loop.</p>
+      <p>index }}&nbsp;</p></td>
+    <td>&nbsp;{{ i['first_name'] }}&nbsp;{{ i['last_name'] }}
+    <br/><img src={{ i[photo] }} width="40" height="40" ></td>
+    <td>&nbsp;{{ i['complaint1'] }}</td>
+    <td>&nbsp;{{ i['cdate'] }}</td>
+  <td><a href="/reply/{{ i['comp_id'] }}">Reply</a></td>
+  </tr>
+    {% endfor %}
+
+
+</table>
+{% include "footer.html" %}
+</form>
+<p>&nbsp;</p>
+<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>&nbsp;</p>
+</body>
+</html>

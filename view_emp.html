@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body>
+<form action="/view_emp" method="get">
+<table width="910" height="175" border="1">
+  <tr>
+    <td width="19">#</td>
+    <td width="158">Empolyee Name</td>
+    <td width="127">Address</td>
+    <td width="109">Mobile</td>
+    <td width="141">Email</td>
+    <td width="162">Gender</td>
+    <td width="32">Age</td>
+    <td></td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>
+        <img src="{{ i['photo'] }}" alt="" height="40" width="40"/>
+     {{ i['first_name'] }}.{{ i['last_name'] }} </td>
+    <td>
+      {{ i['house'] }}<br>
+      {{ i['Place'] }}<br/>
+      {{ i['street'] }}<br>
+      {{ i['pin'] }}<br>
+    </td>
+    <td>
+        {{ i['mob_no'] }}
+    </td>
+    <td>{{ i['email'] }}</td>
+    <td>{{ i['gender'] }}</td>
+    <td>{{ i['DOB'] }}</td>
+
+    <td><a href="/edit_emp/{{ i['login_id'] }}">Edit</a>
+<a href="/emp_dlt/{{ i['login_id']  }}">Delete</a></td>
+  </tr>
+    {% endfor %}
+
+</table>
+{% include "footer.html" %}
+</form>
+</body>
+</html>

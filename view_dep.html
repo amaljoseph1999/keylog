@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% include "adminheader.html" %}
+<body>
+<p>&nbsp;</p>
+<center>
+<form id="form1" name="form1" method="post" action="">
+  <table width="485" height="142" border="1">
+    <tr>
+      <td width="160">#</td>
+      <td width="241">Department Name</td>
+      <td width="62">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+           <tr>
+      <td>&nbsp{{ loop.index }}</td>
+      <td>&nbsp;{{ i['name']  }}</td>
+      <td><p><a href="/dep_edit/{{ i['dept_id'] }}">Edit</a></p>
+           <p><a href="/dept_dlt/{{ i['dept_id'] }}">Delete</a></p>
+
+    </tr>
+
+      {% endfor %}
+
+
+   
+  </table>
+  <div align="center">{% include "footer.html" %}
+  </div>
+</form>
+<p>&nbsp;</p>
+</center>
+</body>
+</html>
