@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<center>
+<form action="/view_emp_attend" method="post">
+<table width="520" border="1">
+  <tr>
+    <td width="203" height="113">Select the date :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td width="301">
+      <label for="date"></label>
+      <input type="date" name="date" id="date" size="30"/>
+    <td height="80" colspan="2">
+      <input type="submit" name="n"/>
+</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="614" height="141" border="1">
+  <tr>
+    <td width="56">#</td>
+    <td width="153">Name</td>
+    <td width="193">Check In</td>
+    <td width="184">Check Out</td>
+  </tr>
+    {% for i2 in data %}
+
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>&nbsp;{{ i2['first_name'] }}. {{ i2['last_name'] }}</td>
+    <td>&nbsp;{{ i2['checkin'] }}</td>
+    <td>&nbsp;{{ i2['checkout'] }}</td>
+  </tr>
+
+    {% endfor %}
+
+</table>
+</form>
+</center>
+</body>
+</html>
