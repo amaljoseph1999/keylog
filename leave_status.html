@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table width="732" border="1">
+  <tr>
+    <td width="52">#</td>
+    <td width="121">Emp Name</td>
+    <td width="168">Date</td>
+    <td width="163">Reason</td>
+    <td width="194">&nbsp;</td>
+  </tr>
+        {% for i in data %}
+  <tr>
+
+    <td>{{ loop.index }}&nbsp;</td>
+    <td>{{ i['first_name'] }}.{{ i['last_name'] }}</td>
+    <td>&nbsp;{{ i['ldate'] }}</td>
+    <td>&nbsp;{{ i['lreason'] }}</td>
+  </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>
